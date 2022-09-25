@@ -1,0 +1,19 @@
+name = "repeat-new-templates"
+main = "./dist/worker.js"
+compatibility_date = "2022-09-25"
+
+workers_dev = false
+
+routes = [
+    {zone_name = "repeat.new", pattern = "repeat.new", custom_domain = true}
+]
+
+[build]
+  command = "npm run build"
+  # The directory to watch for changes while using `wrangler dev`, defaults to the current working directory
+  watch_dir = "_src"
+
+[[unsafe.bindings]]
+type = "analytics_engine"
+name = "AE_ANALYTICS"
+dataset = "analytics_repeat_new"

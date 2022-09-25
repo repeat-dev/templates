@@ -1,0 +1,6 @@
+repeat:
+  name: A simple email repeat
+  description: Repeat TypeScript code on received email
+
+events:
+  - type: email
