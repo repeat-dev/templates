@@ -29,7 +29,7 @@ esbuild.build({
 	minify: true,
 	bundle: true,
 	format: 'esm',
-	outfile: './dist/worker.js',
+	outfile: './_src/dist/worker.js',
 	define: {
 		_REPEAT_TEMPLATES: JSON.stringify(repeatTemplates),
 	},

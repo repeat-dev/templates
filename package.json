@@ -8,13 +8,14 @@
 	},
 	"private": true,
 	"scripts": {
-		"build": "./build.js",
-		"start": "wrangler dev",
-		"deploy": "wrangler publish",
+		"build": "./_src/build.js",
+		"start": "wrangler dev --config _src/wrangler.toml",
+		"deploy": "wrangler publish --config _src/wrangler.toml",
 		"format": "prettier . --write"
 	},
 	"dependencies": {
 		"itty-router": "^2.6.5",
-		"itty-router-extras": "^0.4.2"
+		"itty-router-extras": "^0.4.2",
+		"js-yaml": "^4.1.0"
 	}
 }
