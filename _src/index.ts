@@ -32,7 +32,10 @@ const defaultTemplate = 'webhook';
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		console.log(templates);
+		if (request.method === "OPTIONS") {
+			return new Response("ok")
+		}
+
 		const url = new URL(request.url);
 		const template = url.pathname.substring(1) || '';
 		const requestType =
@@ -55,7 +58,12 @@ export default {
 				return json({ error: 'template not found' }, { status: 404 });
 			}
 		} else {
-			return Response.redirect(`https://dash.repeat.dev/?from_template=${template || defaultTemplate}`, 302);
+			// TODO revert once templates UI part is done
+			if (template) {
+				return Response.redirect(`https://dash.repeat.dev/?from_template=${template || defaultTemplate}`, 302);
+			} else {
+				return new Response("not found, coming soon", {status: 404})
+			}
 		}
 	},
 };
