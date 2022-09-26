@@ -1,5 +1,5 @@
 repeat:
-  name: A simple email repeat
+  name: A simple email
   description: Repeat TypeScript code on received email
 
 events:

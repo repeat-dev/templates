@@ -16,6 +16,7 @@ const repeatTemplates = {};
 getDirectories('./').map(t => {
 	const config = yaml.load(readFileSync(`./${t}/repeat.yml`, { encoding: 'utf-8' }));
 	repeatTemplates[t] = {
+		id: t,
 		...config,
 		repeat: {
 			...config.repeat,

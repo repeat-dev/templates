@@ -7,7 +7,7 @@ export default {
 			env.metrics.write('cron_processed', 1, 'success');
 		} catch (e) {
 			// log error
-			console.error('Cron failed!', e);
+			console.error('Cron failed!', e.message);
 
 			// track failure
 			env.metrics.write('cron_processed', 1, 'failure');
