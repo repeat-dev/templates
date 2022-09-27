@@ -50,6 +50,11 @@ export default {
 			doubles: [1],
 		});
 
+		// temp redirect
+		if (template === "cronjob") {
+			return Response.redirect("https://repeat.new/cron", 302)
+		}
+
 		if (requestType === 'json') {
 			const res = url.pathname === '/' ? templates : templates[url.pathname.substring(1)];
 			if (res) {
