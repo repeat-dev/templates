@@ -4,4 +4,4 @@ repeat:
 
 events:
   - type: cron
-    cron: '* * * * *'
+    cron: '0 * * * *'
