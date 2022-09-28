@@ -63,11 +63,10 @@ export default {
 				return json({ error: 'template not found' }, { status: 404 });
 			}
 		} else {
-			// TODO revert once templates UI part is done
 			if (template) {
 				return Response.redirect(`https://dash.repeat.dev/?from_template=${template || defaultTemplate}`, 302);
 			} else {
-				return new Response('not found, coming soon', { status: 404 });
+				return Response.redirect("https://dash.repeat.dev/projects", 302)
 			}
 		}
 	},
