@@ -1,0 +1,14 @@
+repeat:
+  name: Cloudflare audit logs
+  description: A repeat to track Cloudflare audit logs (pull)
+
+events:
+  - type: cron
+    cron: '* * * * *'
+
+variables:
+  - key: CLOUDFLARE_ACCOUNT_ID
+    value: replace-me
+  - key: CLOUDFLARE_API_TOKEN
+    value: replace-me
+    is_secret: true

@@ -1,3 +1,5 @@
+featured: true
+
 repeat:
   name: Webhook
   description: A webhook template that checks x-webhook-secret header

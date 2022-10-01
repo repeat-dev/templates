@@ -12,17 +12,17 @@ const getDirectories = source =>
 		)
 		.map(dirent => dirent.name);
 
-const repeatTemplates = {};
+const repeatTemplates = [];
 getDirectories('./').map(t => {
 	const config = yaml.load(readFileSync(`./${t}/repeat.yml`, { encoding: 'utf-8' }));
-	repeatTemplates[t] = {
+	repeatTemplates.push({
 		id: t,
 		...config,
 		repeat: {
 			...config.repeat,
 			script: readFileSync(`./${t}/repeat.ts`, { encoding: 'utf-8' }),
 		},
-	};
+	});
 });
 
 esbuild.build({

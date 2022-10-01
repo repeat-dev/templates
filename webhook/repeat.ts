@@ -5,7 +5,7 @@ export default {
 		// write request to metrics, label with request method
 		env.metrics.write('request', 1, request.method);
 
-        // you can add WEBHOOK_SECRET variable in settings
+		// you can add WEBHOOK_SECRET variable in settings
 		if (request.headers.get('x-webhook-secret') !== env.variables.WEBHOOK_SECRET) {
 			// write failed auth
 			env.metrics.write('request_auth_failed', 1);

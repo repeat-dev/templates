@@ -27,7 +27,7 @@ type Template = {
 };
 
 // @ts-ignore
-const templates: Record<string, Template> = _REPEAT_TEMPLATES;
+const templates: RecordTemplate[] = _REPEAT_TEMPLATES;
 const defaultTemplate = 'webhook';
 
 export default {
@@ -37,6 +37,7 @@ export default {
 		}
 
 		const url = new URL(request.url);
+		const featured = url.searchParams.has('featured');
 		const template = url.pathname.substring(1) || '';
 		const requestType =
 			request.headers.get('accept')?.includes('application/json') ||
@@ -51,12 +52,17 @@ export default {
 		});
 
 		// temp redirect
-		if (template === "cronjob") {
-			return Response.redirect("https://repeat.new/cron", 302)
+		if (template === 'cronjob') {
+			return Response.redirect('https://repeat.new/cron', 302);
 		}
 
 		if (requestType === 'json') {
-			const res = url.pathname === '/' ? templates : templates[url.pathname.substring(1)];
+			const res =
+				url.pathname === '/'
+					? featured
+						? templates.filter(x => x.featured)
+						: templates
+					: templates.find(x => x.id === url.pathname.substring(1));
 			if (res) {
 				return json(res);
 			} else {
@@ -66,7 +72,7 @@ export default {
 			if (template) {
 				return Response.redirect(`https://dash.repeat.dev/?from_template=${template || defaultTemplate}`, 302);
 			} else {
-				return Response.redirect("https://dash.repeat.dev/projects", 302)
+				return Response.redirect('https://dash.repeat.dev/projects', 302);
 			}
 		}
 	},

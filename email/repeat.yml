@@ -1,3 +1,5 @@
+featured: true
+
 repeat:
   name: A simple email
   description: Repeat TypeScript code on received email

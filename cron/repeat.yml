@@ -1,3 +1,5 @@
+featured: true
+
 repeat:
   name: CRON job
   description: A repeat to execute a TypeScript code on schedule
