@@ -1,5 +1,5 @@
 export default {
-	async email(email: Repeat.Email, env: Repeat.Env, ctx: ExecutionContext) {
+	async email(email: Repeat.Email, env: Repeat.Env) {
 		// log email
 		console.log(email);
 

@@ -1,5 +1,5 @@
 export default {
-	async cron(cron: Repeat.Cron, env: Repeat.Env, ctx: ExecutionContext): Promise<void> {
+	async cron(cron: Repeat.Cron, env: Repeat.Env): Promise<void> {
 		try {
 			console.log('running cron job');
 			// write cron task here

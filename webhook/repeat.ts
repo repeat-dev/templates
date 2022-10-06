@@ -1,5 +1,5 @@
 export default {
-	async webhook(request: Request, env: Repeat.Env, ctx: ExecutionContext) {
+	async webhook(request: Request, env: Repeat.Env) {
 		console.log('incoming request', `${request.method} ${request.url}`);
 
 		// write request to metrics, label with request method
