@@ -1,0 +1,15 @@
+featured: false
+
+repeat:
+  name: Webhook powered by honojs.dev
+  description: A webhook template powered by honojs.dev
+
+events:
+  - type: webhook
+
+variables:
+  - key: BASIC_AUTH_USER
+    value: hono
+  - key: BASIC_AUTH_PASS
+    value: hono
+    is_secret: true

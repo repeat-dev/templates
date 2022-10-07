@@ -26,7 +26,21 @@ namespace Repeat {
 		};
 		metrics: {
 			write(name: string, value: number, label?: string): void;
+			getAll(
+				view?: '1h' | '1d' | '7d' | '30d',
+				label?: string
+			): Promise<Record<MetricName, Record<MetricLabel, { t: string; avg: number; sum: number; count: number }[]>>>;
+			get(
+				name: string,
+				view?: '1h' | '1d' | '7d' | '30d',
+				label?: string
+			): Promise<Record<MetricLabel, { t: string; avg: number; sum: number; count: number }[]>>;
 		};
-		kv: KVNamespace;
+		kv: Repeat.KV;
+		waitUntil(promise: Promise<any>): void;
+		webhooks: {
+			discord(url: string, message: string | Webhooks.Discord.Payload): Promise<{ ok: boolean; response?: any }>;
+			slack(url: string, message: string | Webhooks.Slack.Payload): Promise<{ ok: boolean; response?: any }>;
+		};
 	}
 }

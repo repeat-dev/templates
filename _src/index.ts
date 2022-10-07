@@ -11,6 +11,8 @@ interface Env {
 	};
 }
 type Template = {
+	id: string;
+	featured: boolean;
 	repeat: {
 		name: string;
 		description: string;
@@ -27,8 +29,14 @@ type Template = {
 };
 
 // @ts-ignore
-const templates: RecordTemplate[] = _REPEAT_TEMPLATES;
+const templates: Template[] = _REPEAT_TEMPLATES;
 const defaultTemplate = 'webhook';
+
+const redirects = new Map([
+	['cronjob', 'cron'],
+	['hook', 'webhook'],
+	['honojs', 'webhook-honojs'],
+]);
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
@@ -51,9 +59,8 @@ export default {
 			doubles: [1],
 		});
 
-		// temp redirect
-		if (template === 'cronjob') {
-			return Response.redirect('https://repeat.new/cron', 302);
+		if (redirects.has(template)) {
+			return Response.redirect(`https://repeat.new/${redirects.get(template)}`, 302);
 		}
 
 		if (requestType === 'json') {
