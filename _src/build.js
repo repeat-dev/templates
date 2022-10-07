@@ -17,7 +17,13 @@ getDirectories('./').map(t => {
 	const config = yaml.load(readFileSync(`./${t}/repeat.yml`, { encoding: 'utf-8' }));
 	repeatTemplates.push({
 		id: t,
-		...config,
+		featured: config.featured,
+		events: config.events || null,
+		variables:
+			config.variables?.map(x => {
+				return { ...x, is_secret: !!x.is_secret };
+			}) || null,
+		npm_packages: config.npm_packages || null,
 		repeat: {
 			...config.repeat,
 			script: readFileSync(`./${t}/repeat.ts`, { encoding: 'utf-8' }),
