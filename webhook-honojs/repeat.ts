@@ -23,7 +23,9 @@ export default {
 		app.use(
 			'/auth/*',
 			basicAuth({
+				// BASIC_AUTH_USER = hono, can be changed in Variables
 				username: env.variables.BASIC_AUTH_USER,
+				// BASIC_AUTH_PASS = hono, can be changed in Variables
 				password: env.variables.BASIC_AUTH_PASS,
 			})
 		);
