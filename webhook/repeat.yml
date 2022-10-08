@@ -10,3 +10,4 @@ events:
 variables:
   - key: WEBHOOK_SECRET
     value: replace-me
+    is_secret: true

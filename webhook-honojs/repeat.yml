@@ -12,6 +12,7 @@ variables:
     value: hono
   - key: BASIC_AUTH_PASS
     value: hono
+    is_secret: true
 
 npm_packages:
   - name: hono
