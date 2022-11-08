@@ -85,7 +85,7 @@ async function requestToDiscord(request: Request, env: Repeat.Env) {
 			type: 'application/json',
 		});
 		blobFileExtension = 'json';
-	} else if (request.headers.get('content-type')?.includes('multipart/form-data')) {
+	} else if (request.headers.get('content-type')?.includes('form')) {
 		blob = new Blob([JSON.stringify(Object.fromEntries(await request.formData()), null, 2)], {
 			type: 'application/json',
 		});
