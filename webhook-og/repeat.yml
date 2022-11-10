@@ -1,0 +1,8 @@
+featured: true
+
+repeat:
+  name: OG image webhook
+  description: A webhook template that generates an OG image
+
+events:
+  - type: webhook
