@@ -1,0 +1,13 @@
+featured: true
+
+repeat:
+  name: Webhook to Discord
+  description: A webhook template that forwards webhook info to Discord
+
+events:
+  - type: webhook
+
+variables:
+  - key: WEBHOOK_SECRET
+    value: change-me-in-variables
+    is_secret: true
