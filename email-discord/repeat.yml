@@ -1,0 +1,13 @@
+featured: true
+
+repeat:
+  name: Email to Discord
+  description: An email template to forward emails to Discord
+
+events:
+  - type: email
+
+variables:
+  - key: WEBHOOK_SECRET
+    value: change-me-in-variables
+    is_secret: true
