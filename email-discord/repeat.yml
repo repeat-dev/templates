@@ -2,7 +2,7 @@ featured: true
 
 repeat:
   name: Email to Discord
-  description: An email template to forward emails to Discord
+  description: A repeat template to forward emails to Discord
 
 events:
   - type: email
