@@ -10,9 +10,13 @@ interface Env {
 		writeDataPoint(event?: AnalyticsEngineEvent): void;
 	};
 }
+
+type Category = "basics" | "automation" | "web" | "infrastructure"
+
 type Template = {
 	id: string;
 	featured: boolean;
+	category: Category;
 	repeat: {
 		name: string;
 		description: string;

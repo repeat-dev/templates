@@ -1,4 +1,5 @@
 featured: true
+category: automation
 
 repeat:
   name: Email to Discord

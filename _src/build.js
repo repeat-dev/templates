@@ -18,6 +18,7 @@ getDirectories('./').map(t => {
 	repeatTemplates.push({
 		id: t,
 		featured: config.featured,
+		category: config.category,
 		events: config.events || null,
 		variables:
 			config.variables?.map(x => {
