@@ -2,8 +2,8 @@ featured: true
 category: basics
 
 repeat:
-  name: A simple email
-  description: Repeat TypeScript code on received email
+  name: Email
+  description: Parse incoming or forwarded emails
 
 events:
   - type: email

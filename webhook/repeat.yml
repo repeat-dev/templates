@@ -3,12 +3,7 @@ category: basics
 
 repeat:
   name: Webhook
-  description: A webhook template that checks x-webhook-secret header
+  description: Run code on HTTP requests (webhooks)
 
 events:
   - type: webhook
-
-variables:
-  - key: WEBHOOK_SECRET
-    value: replace-me
-    is_secret: true

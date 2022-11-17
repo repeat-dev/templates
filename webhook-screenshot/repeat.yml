@@ -1,0 +1,9 @@
+featured: true
+category: web
+
+repeat:
+  name: Webhook screenshot
+  description: Capture a screenshot from any website
+
+events:
+  - type: webhook

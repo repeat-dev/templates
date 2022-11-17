@@ -2,8 +2,8 @@ featured: true
 category: web
 
 repeat:
-  name: OG image webhook
-  description: A webhook template that generates an OG image
+  name: Open Graph image
+  description: Generate OG image from URL parameters
 
 events:
   - type: webhook

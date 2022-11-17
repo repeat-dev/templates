@@ -1,9 +1,0 @@
-featured: false
-
-repeat:
-  name: Experimental screenshot & Lighthouse
-  description: A repeat to get website screenshot or Ligthouse score
-
-events:
-  - type: cron
-    cron: '0 0 * * *'

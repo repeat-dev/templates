@@ -11,7 +11,7 @@ interface Env {
 	};
 }
 
-type Category = "basics" | "automation" | "web" | "infrastructure"
+type Category = 'basics' | 'automation' | 'web' | 'infrastructure';
 
 type Template = {
 	id: string;
@@ -44,7 +44,7 @@ const redirects = new Map([
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		console.log(Object.fromEntries(request.headers))
+		console.log(Object.fromEntries(request.headers));
 
 		if (request.method === 'OPTIONS') {
 			return new Response('ok');

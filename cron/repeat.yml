@@ -3,7 +3,7 @@ category: basics
 
 repeat:
   name: CRON job
-  description: A repeat to execute a TypeScript code on schedule
+  description: Run your code on schedule
 
 events:
   - type: cron

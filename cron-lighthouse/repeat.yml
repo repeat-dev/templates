@@ -1,0 +1,10 @@
+featured: true
+category: automation
+
+repeat:
+  name: Lighthouse score
+  description: Get Lighthouse metrics for any website
+
+events:
+  - type: cron
+    cron: '0 * * * *'
