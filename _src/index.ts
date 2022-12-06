@@ -40,6 +40,7 @@ const redirects = new Map([
 	['cronjob', 'cron'],
 	['hook', 'webhook'],
 	['honojs', 'webhook-honojs'],
+	['all-i-want-is-you', 'cron-all-i-want-for-christmas-is-you'],
 ]);
 
 export default {
@@ -75,7 +76,7 @@ export default {
 					? featured
 						? templates.filter(x => x.featured)
 						: templates
-					: templates.find(x => x.id === url.pathname.substring(1));
+					: templates.find(x => x.id === template);
 			if (res) {
 				return json(res);
 			} else {
@@ -83,7 +84,12 @@ export default {
 			}
 		} else {
 			if (template) {
-				return Response.redirect(`https://dash.repeat.dev/?from_template=${template || defaultTemplate}`, 302);
+				return Response.redirect(
+					`https://dash.repeat.dev/?from_template=${
+						templates.find(x => x.id === template) ? template : defaultTemplate
+					}`,
+					302
+				);
 			} else {
 				return Response.redirect('https://dash.repeat.dev/projects', 302);
 			}

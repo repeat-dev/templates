@@ -1,0 +1,9 @@
+featured: false
+category: automation
+
+repeat:
+  name: Webhook to Tasks demo
+  description: Accept webhooks and pass the JSON payload to tasks for background processing.
+
+events:
+  - type: webhook

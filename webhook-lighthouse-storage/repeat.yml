@@ -1,0 +1,9 @@
+featured: false
+category: automation
+
+repeat:
+  name: Lighthouse + Storage
+  description: Get Lighthouse scores for any website and store them in Storage
+
+events:
+  - type: webhook

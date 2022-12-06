@@ -1,0 +1,10 @@
+featured: false
+category: automation
+
+repeat:
+  name: All I want for Xmas is you
+  description: 🎵 Keep repeating, run your code on schedule all year long 🎶
+
+events:
+  - type: cron
+    cron: '0 * * * *'
