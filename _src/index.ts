@@ -91,7 +91,7 @@ export default {
 					302
 				);
 			} else {
-				return Response.redirect('https://dash.repeat.dev/projects', 302);
+				return Response.redirect('https://dash.repeat.dev/?from_template=list', 302);
 			}
 		}
 	},
